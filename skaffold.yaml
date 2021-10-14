@@ -1,0 +1,12 @@
+apiVersion: skaffold/v1
+kind: Config
+build:
+  artifacts:
+    - image: springboot-configmap-image
+      jib: {}
+  local: {}
+
+deploy:
+  kubectl:
+    manifests:
+      - k8-*     #yaml-files are starts with

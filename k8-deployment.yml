@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: configmapdeployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: configmapdeployment
+  template:
+    metadata:
+      labels:
+        name: configmapdeployment
+    spec:
+      containers:
+        - name: configmapdeployment
+          image: springkubernetes-dockerimage
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Never

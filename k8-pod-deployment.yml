@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: springbootconfigmap
+spec:
+  containers:
+    - name: springbootconfigmap
+      image: springboot-configmap-image
+      ports:
+        - containerPort: 8080
+          protocol: TCP
+      imagePullPolicy: Never
