@@ -10,3 +10,6 @@ spec:
         - containerPort: 8080
           protocol: TCP
       imagePullPolicy: Never
+      envFrom:
+        - configMapRef:
+            name: configmapdata

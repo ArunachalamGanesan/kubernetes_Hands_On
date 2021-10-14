@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: configmapdata
 data:
-  message: Hello World!, I am config map
+  name: Hello World!, I am config map

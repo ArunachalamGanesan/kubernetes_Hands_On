@@ -5,19 +5,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HelloWorldController {
+public class HelloWorldContoller {
 
-    @Value("${message}")
-    public String message;
+    @Value("${name}")
+    public String name;
 
     @GetMapping("/health")
     public String healthCheck(){
-        return "Health Check is Good";
+        return "health";
     }
 
-    @GetMapping("/welcome")
-    public String welcomeMessage(){
-        return message;
+    @GetMapping("/hello")
+    public String getMessage(){
+        return name;
     }
-
 }

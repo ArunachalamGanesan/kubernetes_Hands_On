@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: configmapservice
+  name: configmapservicesecret
 spec:
   selector:
     name: configmapdeployment
   ports:
     - port: 8080
-      nodePort: 32154
+      nodePort: 32155
       targetPort: 8080
       protocol: TCP
   type: NodePort
