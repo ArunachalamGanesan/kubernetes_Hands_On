@@ -1,12 +1,19 @@
-apiVersion: skaffold/v1
+apiVersion: skaffold/v2beta24
 kind: Config
+metadata:
+  name: kubernetes-hands-on-
 build:
   artifacts:
-    - image: springboot-configmap-image
-      jib: {}
-  local: {}
-
+  - image: springboot-configmap-image
+    buildpacks:
+      builder: gcr.io/buildpacks/builder:v1
+  - image: springkubernetes-dockerimage
+    jib:
+      project: configmap
 deploy:
   kubectl:
     manifests:
-      - k8-*     #yaml-files are starts with
+    - k8-configmap.yml
+    - k8-deployment.yml
+    - k8-pod-deployment.yml
+    - k8-service.yml
